@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ManagerFiliais.Domain.Base;
+﻿using ManagerFiliais.Domain.Base;
 
-namespace ManagerFiliais.Domain.Entities
-{
-    public class Departamentos : BaseEntity <int>
+namespace ManagerFiliais.Domain.Entities 
+{ 
+    public class Departamentos : BaseEntity<int>
     {
+        public Departamentos() { }
+
+        public Departamentos(int id, string nome, int idFilial)
+        {
+            Id = id;
+            Nome = nome;
+            IdFilial = idFilial;
+        }
+
+        public string Nome { get; set; }
+        public int IdFilial { get; set; }
     }
 }

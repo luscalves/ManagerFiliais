@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ManagerFiliais.Domain.Base;
 
 namespace ManagerFiliais.Domain.Entities
 {
-    internal class Funcionarios_Projetos
+
+    public class FuncionariosProjetos : BaseEntity<int>
     {
+        public FuncionariosProjetos() { }
+
+        public FuncionariosProjetos(int id, int idFuncionario, int idProjeto, string cargoProjeto, DateTime dataParticipacao)
+        {
+            Id = id;
+            IdFuncionario = idFuncionario;
+            IdProjeto = idProjeto;
+            CargoProjeto = cargoProjeto;
+            DataParticipacao = dataParticipacao;
+        }
+
+        public int IdFuncionario { get; set; }
+        public int IdProjeto { get; set; }
+        public string CargoProjeto { get; set; }
+        public DateTime DataParticipacao { get; set; }
     }
 }
