@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerFiliais.Domain", "ManagerFiliais.Domain\ManagerFiliais.Domain.csproj", "{DF85F8AB-6D60-4A67-83BD-04A469623310}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagerFiliais.Domain", "ManagerFiliais.Domain\ManagerFiliais.Domain.csproj", "{DF85F8AB-6D60-4A67-83BD-04A469623310}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerFiliais.Repository", "ManagerFiliais.Repository\ManagerFiliais.Repository.csproj", "{5DDD64E3-1352-4F25-A583-9CC43ECB9FDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagerFiliais.Repository", "ManagerFiliais.Repository\ManagerFiliais.Repository.csproj", "{5DDD64E3-1352-4F25-A583-9CC43ECB9FDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerFiliais.Service", "ManagerFiliais.Service\ManagerFiliais.Service.csproj", "{A3A2ACFD-4B0C-4DA3-922E-2BAD966DA6FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManagerFiliais.Service", "ManagerFiliais.Service\ManagerFiliais.Service.csproj", "{A3A2ACFD-4B0C-4DA3-922E-2BAD966DA6FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManagerFiliais.App", "ManagerFiliais.App\ManagerFiliais.App.csproj", "{9A7BDCA2-5645-4D7E-B525-15B0F52F3456}"
 EndProject
