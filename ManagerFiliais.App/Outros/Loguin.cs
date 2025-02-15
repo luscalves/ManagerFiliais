@@ -48,7 +48,7 @@ namespace ManagerFiliais.App.Outros
             {
                 var usuario = new Usuarios
                 {
-                 
+                    
                     Nome = "lucalves14",
                     Email = "admin@gmail.com",
                     Senha = "admin"

@@ -1,20 +1,87 @@
-﻿using System;
+﻿using ManagerFiliais.App.Base;
+using ManagerFiliais.Domain.Base;
+using ManagerFiliais.Domain.Entities;
+using ManagerFiliais.Service.Validators;
+using ReaLTaiizor.Forms;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ManagerFiliais.App.Cadastro
+namespace ManagerFiliais.App.Cadastros
 {
-    public partial class CadastroFiliais : Form
+    public partial class CadastroFiliais : CadastroBase
     {
-        public CadastroFiliais()
+        private IBaseService<Filiais> _filialService;
+        private List<Filiais> filiais;
+
+        public CadastroFiliais(IBaseService<Filiais> filialService)
         {
+            _filialService = filialService;
             InitializeComponent();
+        }
+
+        private void PreencheObjeto(Filiais filial)
+        {
+            filial.Nome = txtNome.Text;
+            filial.Endereco = txtEndereco.Text;
+            filial.Telefone = txtTelefone.Text;
+        }
+
+        protected override void Salvar()
+        {
+            try
+            {
+                if (IsAlteracao)
+                {
+                    if (int.TryParse(txtId.Text, out var id))
+                    {
+                        var filial = _filialService.GetById<Filiais>(id);
+                        PreencheObjeto(filial);
+                        filial = _filialService.Update<Filiais, Filiais, FiliaisValidator>(filial);
+                    }
+                }
+                else
+                {
+                    var filial = new Filiais();
+                    PreencheObjeto(filial);
+                    _filialService.Add<Filiais, Filiais, FiliaisValidator>(filial);
+                }
+                tabControlCadastro.SelectedIndex = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"Manager Filiais",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        protected override void Deletar(int id)
+        {
+            try
+            {
+                _filialService.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"Manager Filiais",
+                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        protected override void CarregaGrid()
+        {
+            filiais = _filialService.Get<Filiais>().ToList();
+            dataGridViewConsulta.DataSource = filiais;
+            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        protected override void CarregaRegistro(DataGridViewRow? linha)
+        {
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
+            txtEndereco.Text = linha?.Cells["Endereco"].Value.ToString();
+            txtTelefone.Text = linha?.Cells["Telefone"].Value.ToString();
         }
     }
 }

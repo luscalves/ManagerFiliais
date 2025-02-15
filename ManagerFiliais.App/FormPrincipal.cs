@@ -47,32 +47,36 @@ namespace ManagerFiliais.App
             }
         }
 
-        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ExibeFormulario<CadastroFuncionarios>();
-        }
-
-        private void grupoDeProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastroDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExibeFormulario<CadastroUsuarios>();
         }
 
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastroDeFuncionariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroFuncionarios>();
+        }
+
+        private void cadastroDeFiliaisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroFiliais>();
+        }
+
+        private void cadastroDeDepartamentosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExibeFormulario<CadastroDepartamentos>();
         }
 
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ExibeFormulario<CadastroFuncionariosProjetos>();
-        }
-
-        private void vendaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cadastroDeFuncionáriosEmPToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ExibeFormulario<CadastroProjetos>();
         }
 
-    
+        private void cadastroDeFuncionárioEmProjetoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExibeFormulario<CadastroFuncionariosProjetos>();
+        }
+
         private void ExibeFormulario<TFormulario>() where TFormulario : Form
         {
             var cad = ConfigureDI.ServicesProvider!.GetService<TFormulario>();

@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using ManagerFiliais.App.Base;
+using ManagerFiliais.Domain.Base;
+using ManagerFiliais.Domain.Entities;
+using ManagerFiliais.Service.Validators;
 
 namespace ManagerFiliais.App.Cadastro
 {
-    public partial class CadastroFuncionariosProjetos : Form
+    public partial class CadastroFuncionariosProjetos : CadastroBase
     {
         public CadastroFuncionariosProjetos()
         {
             InitializeComponent();
         }
+
+
     }
 }

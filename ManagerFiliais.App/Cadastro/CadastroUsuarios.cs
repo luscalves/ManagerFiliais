@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ManagerFiliais.App.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ManagerFiliais.App.Cadastro
 {
-    public partial class CadastroUsuarios : Form
+    public partial class CadastroUsuarios : CadastroBase
     {
         public CadastroUsuarios()
         {

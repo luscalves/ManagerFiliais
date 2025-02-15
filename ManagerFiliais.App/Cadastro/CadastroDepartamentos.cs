@@ -1,4 +1,5 @@
-﻿using ManagerFiliais.Domain.Base;
+﻿using ManagerFiliais.App.Base;
+using ManagerFiliais.Domain.Base;
 using ManagerFiliais.Domain.Entities;
 using ManagerFiliais.Service.Validators;
 using ReaLTaiizor.Forms;
@@ -9,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ManagerFiliais.App.Cadastros
 {
-    public partial class CadastroDepartamentos : MaterialForm
+    public partial class CadastroDepartamentos : CadastroBase
     {
         private readonly IBaseService<Departamentos> _departamentoService;
         private List<Departamentos> departamentos;

@@ -8,6 +8,8 @@ using ManagerFiliais.App.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ManagerFiliais.App.Outros;
+using ManagerFiliais.App.Cadastro;
+using ManagerFiliais.App.Cadastros;
 
 namespace ManagerFiliais.App.Infra
 {
@@ -55,12 +57,12 @@ namespace ManagerFiliais.App.Infra
             #region Formulários
             // Adicione aqui os formulários necessários
             Services.AddTransient<Login, Login>();
-            Services.AddTransient<Departamentos, Departamentos>();
-            Services.AddTransient<Funcionarios, Funcionarios>();
-            Services.AddTransient<FuncionariosProjetos, FuncionariosProjetos>();
-            Services.AddTransient<Filiais, Filiais>();
-            Services.AddTransient<Projetos, Projetos>();
-            Services.AddTransient<Usuarios, Usuarios>();
+            Services.AddTransient<CadastroDepartamentos, CadastroDepartamentos>();
+            Services.AddTransient<CadastroFuncionarios, CadastroFuncionarios>();
+            Services.AddTransient<CadastroFuncionariosProjetos, CadastroFuncionariosProjetos>();
+            Services.AddTransient<CadastroFiliais, CadastroFiliais>();
+            Services.AddTransient<CadastroProjetos, CadastroProjetos>();
+            Services.AddTransient<CadastroUsuarios, CadastroUsuarios>();
 
 
             #endregion
