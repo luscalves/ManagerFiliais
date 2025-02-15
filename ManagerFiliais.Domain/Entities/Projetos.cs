@@ -2,7 +2,6 @@
 
 namespace ManagerFiliais.Domain.Entities
 {
-
     public class Projetos : BaseEntity<int>
     {
         public Projetos() { }
@@ -20,5 +19,7 @@ namespace ManagerFiliais.Domain.Entities
         public int IdDepartamento { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime? DataFim { get; set; }
+
+        public Departamentos Departamento { get; set; }
     }
 }

@@ -176,7 +176,7 @@
             DataTxt.SelectionLength = 0;
             DataTxt.SelectionStart = 0;
             DataTxt.ShortcutsEnabled = true;
-            DataTxt.Size = new Size(212, 48);
+            DataTxt.Size = new Size(412, 48);
             DataTxt.TabIndex = 1;
             DataTxt.TabStop = false;
             DataTxt.TextAlign = HorizontalAlignment.Left;

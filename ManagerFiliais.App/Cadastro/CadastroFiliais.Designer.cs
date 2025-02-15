@@ -2,303 +2,15 @@
 {
     partial class CadastroFiliais
     {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.TextBox txtEndereco;
-        private System.Windows.Forms.TextBox txtTelefone;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label lblNome;
-        private System.Windows.Forms.Label lblEndereco;
-        private System.Windows.Forms.Label lblTelefone;
-        private System.Windows.Forms.TabControl tabControlCadastro;
-        private System.Windows.Forms.TabPage tabPageCadastro;
-        private System.Windows.Forms.TabPage tabPageConsulta;
-        private System.Windows.Forms.DataGridView dataGridViewConsulta;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnDeletar;
 
-        private void InitializeComponent()
-        {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFiliais));
-            txtId = new TextBox();
-            txtNome = new TextBox();
-            txtEndereco = new TextBox();
-            txtTelefone = new TextBox();
-            lblId = new Label();
-            lblNome = new Label();
-            lblEndereco = new Label();
-            lblTelefone = new Label();
-            tabPageConsulta = new TabPage();
-            btnDeletar = new Button();
-            dataGridViewConsulta = new DataGridView();
-            btnSalvar = new Button();
-            IdTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            FilliaisTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            EndercoTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            TelefoneTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            tabControlCadastro.SuspendLayout();
-            tabPageCadastro.SuspendLayout();
-            tabPageConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewConsulta).BeginInit();
-            SuspendLayout();
-            // 
-            // imageList
-            // 
-            imageList.ImageStream = (ImageListStreamer)resources.GetObject("imageList.ImageStream");
-            imageList.Images.SetKeyName(0, "form.png");
-            imageList.Images.SetKeyName(1, "search.png");
-            // 
-            // tabPageCadastro
-            // 
-            tabPageCadastro.Controls.Add(TelefoneTxt);
-            tabPageCadastro.Controls.Add(EndercoTxt);
-            tabPageCadastro.Controls.Add(FilliaisTxt);
-            tabPageCadastro.Controls.Add(IdTxt);
-            tabPageCadastro.Controls.SetChildIndex(IdTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(FilliaisTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(EndercoTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(TelefoneTxt, 0);
-            // 
-            // txtId
-            // 
-            txtId.Location = new Point(100, 20);
-            txtId.Name = "txtId";
-            txtId.ReadOnly = true;
-            txtId.Size = new Size(200, 27);
-            txtId.TabIndex = 0;
-            // 
-            // txtNome
-            // 
-            txtNome.Location = new Point(100, 60);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(200, 27);
-            txtNome.TabIndex = 1;
-            // 
-            // txtEndereco
-            // 
-            txtEndereco.Location = new Point(100, 100);
-            txtEndereco.Name = "txtEndereco";
-            txtEndereco.Size = new Size(200, 27);
-            txtEndereco.TabIndex = 2;
-            // 
-            // txtTelefone
-            // 
-            txtTelefone.Location = new Point(100, 140);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(200, 27);
-            txtTelefone.TabIndex = 3;
-            // 
-            // lblId
-            // 
-            lblId.AutoSize = true;
-            lblId.Location = new Point(20, 20);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(18, 13);
-            lblId.TabIndex = 4;
-            lblId.Text = "ID";
-            // 
-            // lblNome
-            // 
-            lblNome.AutoSize = true;
-            lblNome.Location = new Point(20, 60);
-            lblNome.Name = "lblNome";
-            lblNome.Size = new Size(35, 13);
-            lblNome.TabIndex = 5;
-            lblNome.Text = "Nome";
-            // 
-            // lblEndereco
-            // 
-            lblEndereco.AutoSize = true;
-            lblEndereco.Location = new Point(20, 100);
-            lblEndereco.Name = "lblEndereco";
-            lblEndereco.Size = new Size(53, 13);
-            lblEndereco.TabIndex = 6;
-            lblEndereco.Text = "Endereço";
-            // 
-            // lblTelefone
-            // 
-            lblTelefone.AutoSize = true;
-            lblTelefone.Location = new Point(20, 140);
-            lblTelefone.Name = "lblTelefone";
-            lblTelefone.Size = new Size(49, 13);
-            lblTelefone.TabIndex = 7;
-            lblTelefone.Text = "Telefone";
-            // 
-            // tabPageConsulta
-            // 
-            tabPageConsulta.Controls.Add(btnDeletar);
-            tabPageConsulta.Location = new Point(4, 22);
-            tabPageConsulta.Name = "tabPageConsulta";
-            tabPageConsulta.Padding = new Padding(3);
-            tabPageConsulta.Size = new Size(352, 214);
-            tabPageConsulta.TabIndex = 1;
-            tabPageConsulta.Text = "Consulta";
-            tabPageConsulta.UseVisualStyleBackColor = true;
-            tabPageConsulta.Controls.SetChildIndex(btnDeletar, 0);
-            // 
-            // btnDeletar
-            // 
-            btnDeletar.Location = new Point(0, 0);
-            btnDeletar.Name = "btnDeletar";
-            btnDeletar.Size = new Size(75, 23);
-            btnDeletar.TabIndex = 6;
-            // 
-            // dataGridViewConsulta
-            // 
-            dataGridViewConsulta.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewConsulta.Location = new Point(6, 6);
-            dataGridViewConsulta.Name = "dataGridViewConsulta";
-            dataGridViewConsulta.RowHeadersWidth = 51;
-            dataGridViewConsulta.Size = new Size(340, 150);
-            dataGridViewConsulta.TabIndex = 0;
-            // 
-            // btnSalvar
-            // 
-            btnSalvar.Location = new Point(0, 0);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(75, 23);
-            btnSalvar.TabIndex = 0;
-            // 
-            // IdTxt
-            // 
-            IdTxt.AnimateReadOnly = false;
-            IdTxt.AutoCompleteMode = AutoCompleteMode.None;
-            IdTxt.AutoCompleteSource = AutoCompleteSource.None;
-            IdTxt.BackgroundImageLayout = ImageLayout.None;
-            IdTxt.CharacterCasing = CharacterCasing.Normal;
-            IdTxt.Depth = 0;
-            IdTxt.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            IdTxt.HideSelection = true;
-            IdTxt.Hint = "Id";
-            IdTxt.LeadingIcon = null;
-            IdTxt.Location = new Point(16, 65);
-            IdTxt.MaxLength = 32767;
-            IdTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            IdTxt.Name = "IdTxt";
-            IdTxt.PasswordChar = '\0';
-            IdTxt.PrefixSuffixText = null;
-            IdTxt.ReadOnly = false;
-            IdTxt.RightToLeft = RightToLeft.No;
-            IdTxt.SelectedText = "";
-            IdTxt.SelectionLength = 0;
-            IdTxt.SelectionStart = 0;
-            IdTxt.ShortcutsEnabled = true;
-            IdTxt.Size = new Size(89, 48);
-            IdTxt.TabIndex = 2;
-            IdTxt.TabStop = false;
-            IdTxt.TextAlign = HorizontalAlignment.Left;
-            IdTxt.TrailingIcon = null;
-            IdTxt.UseSystemPasswordChar = false;
-            // 
-            // FilliaisTxt
-            // 
-            FilliaisTxt.AnimateReadOnly = false;
-            FilliaisTxt.AutoCompleteMode = AutoCompleteMode.None;
-            FilliaisTxt.AutoCompleteSource = AutoCompleteSource.None;
-            FilliaisTxt.BackgroundImageLayout = ImageLayout.None;
-            FilliaisTxt.CharacterCasing = CharacterCasing.Normal;
-            FilliaisTxt.Depth = 0;
-            FilliaisTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            FilliaisTxt.HideSelection = true;
-            FilliaisTxt.Hint = "Nome";
-            FilliaisTxt.LeadingIcon = null;
-            FilliaisTxt.Location = new Point(111, 65);
-            FilliaisTxt.MaxLength = 32767;
-            FilliaisTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            FilliaisTxt.Name = "FilliaisTxt";
-            FilliaisTxt.PasswordChar = '\0';
-            FilliaisTxt.PrefixSuffixText = null;
-            FilliaisTxt.ReadOnly = false;
-            FilliaisTxt.RightToLeft = RightToLeft.No;
-            FilliaisTxt.SelectedText = "";
-            FilliaisTxt.SelectionLength = 0;
-            FilliaisTxt.SelectionStart = 0;
-            FilliaisTxt.ShortcutsEnabled = true;
-            FilliaisTxt.Size = new Size(667, 48);
-            FilliaisTxt.TabIndex = 3;
-            FilliaisTxt.TabStop = false;
-            FilliaisTxt.TextAlign = HorizontalAlignment.Left;
-            FilliaisTxt.TrailingIcon = null;
-            FilliaisTxt.UseSystemPasswordChar = false;
-            // 
-            // EndercoTxt
-            // 
-            EndercoTxt.AnimateReadOnly = false;
-            EndercoTxt.AutoCompleteMode = AutoCompleteMode.None;
-            EndercoTxt.AutoCompleteSource = AutoCompleteSource.None;
-            EndercoTxt.BackgroundImageLayout = ImageLayout.None;
-            EndercoTxt.CharacterCasing = CharacterCasing.Normal;
-            EndercoTxt.Depth = 0;
-            EndercoTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            EndercoTxt.HideSelection = true;
-            EndercoTxt.Hint = "Endereço";
-            EndercoTxt.LeadingIcon = null;
-            EndercoTxt.Location = new Point(16, 137);
-            EndercoTxt.MaxLength = 32767;
-            EndercoTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            EndercoTxt.Name = "EndercoTxt";
-            EndercoTxt.PasswordChar = '\0';
-            EndercoTxt.PrefixSuffixText = null;
-            EndercoTxt.ReadOnly = false;
-            EndercoTxt.RightToLeft = RightToLeft.No;
-            EndercoTxt.SelectedText = "";
-            EndercoTxt.SelectionLength = 0;
-            EndercoTxt.SelectionStart = 0;
-            EndercoTxt.ShortcutsEnabled = true;
-            EndercoTxt.Size = new Size(762, 48);
-            EndercoTxt.TabIndex = 4;
-            EndercoTxt.TabStop = false;
-            EndercoTxt.TextAlign = HorizontalAlignment.Left;
-            EndercoTxt.TrailingIcon = null;
-            EndercoTxt.UseSystemPasswordChar = false;
-            // 
-            // TelefoneTxt
-            // 
-            TelefoneTxt.AnimateReadOnly = false;
-            TelefoneTxt.AutoCompleteMode = AutoCompleteMode.None;
-            TelefoneTxt.AutoCompleteSource = AutoCompleteSource.None;
-            TelefoneTxt.BackgroundImageLayout = ImageLayout.None;
-            TelefoneTxt.CharacterCasing = CharacterCasing.Normal;
-            TelefoneTxt.Depth = 0;
-            TelefoneTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            TelefoneTxt.HideSelection = true;
-            TelefoneTxt.Hint = "Telefone";
-            TelefoneTxt.LeadingIcon = null;
-            TelefoneTxt.Location = new Point(16, 191);
-            TelefoneTxt.MaxLength = 32767;
-            TelefoneTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            TelefoneTxt.Name = "TelefoneTxt";
-            TelefoneTxt.PasswordChar = '\0';
-            TelefoneTxt.PrefixSuffixText = null;
-            TelefoneTxt.ReadOnly = false;
-            TelefoneTxt.RightToLeft = RightToLeft.No;
-            TelefoneTxt.SelectedText = "";
-            TelefoneTxt.SelectionLength = 0;
-            TelefoneTxt.SelectionStart = 0;
-            TelefoneTxt.ShortcutsEnabled = true;
-            TelefoneTxt.Size = new Size(492, 48);
-            TelefoneTxt.TabIndex = 5;
-            TelefoneTxt.TabStop = false;
-            TelefoneTxt.TextAlign = HorizontalAlignment.Left;
-            TelefoneTxt.TrailingIcon = null;
-            TelefoneTxt.UseSystemPasswordChar = false;
-            // 
-            // CadastroFiliais
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            ClientSize = new Size(806, 444);
-            Location = new Point(0, 0);
-            Name = "CadastroFiliais";
-            Text = "Cadastro de Filiais";
-            tabControlCadastro.ResumeLayout(false);
-            tabPageCadastro.ResumeLayout(false);
-            tabPageCadastro.PerformLayout();
-            tabPageConsulta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewConsulta).EndInit();
-            ResumeLayout(false);
-        }
-
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -308,9 +20,198 @@
             base.Dispose(disposing);
         }
 
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit TelefoneTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit EndercoTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit FilliaisTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit IdTxt;
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFiliais));
+            txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtEndereco = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtTelefone = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            tabControlCadastro.SuspendLayout();
+            tabPageCadastro.SuspendLayout();
+            SuspendLayout();
+            // 
+            // imageList
+            // 
+            imageList.ImageStream = (ImageListStreamer)resources.GetObject("imageList.ImageStream");
+            imageList.Images.SetKeyName(0, "form.png");
+            imageList.Images.SetKeyName(1, "search.png");
+            // 
+            // tabControlCadastro
+            // 
+            tabControlCadastro.Location = new Point(3, 85);
+            tabControlCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabControlCadastro.Size = new Size(811, 364);
+            // 
+            // tabPageCadastro
+            // 
+            tabPageCadastro.Controls.Add(txtTelefone);
+            tabPageCadastro.Controls.Add(txtId);
+            tabPageCadastro.Controls.Add(txtEndereco);
+            tabPageCadastro.Controls.Add(txtNome);
+            tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Size = new Size(803, 329);
+            tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtEndereco, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtTelefone, 0);
+            // 
+            // txtNome
+            // 
+            txtNome.AnimateReadOnly = false;
+            txtNome.AutoCompleteMode = AutoCompleteMode.None;
+            txtNome.AutoCompleteSource = AutoCompleteSource.None;
+            txtNome.BackgroundImageLayout = ImageLayout.None;
+            txtNome.CharacterCasing = CharacterCasing.Normal;
+            txtNome.Depth = 0;
+            txtNome.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNome.HideSelection = true;
+            txtNome.Hint = "Nome";
+            txtNome.LeadingIcon = null;
+            txtNome.Location = new Point(16, 8);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
+            txtNome.MaxLength = 32767;
+            txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtNome.Name = "txtNome";
+            txtNome.PasswordChar = '\0';
+            txtNome.PrefixSuffixText = null;
+            txtNome.ReadOnly = false;
+            txtNome.RightToLeft = RightToLeft.No;
+            txtNome.SelectedText = "";
+            txtNome.SelectionLength = 0;
+            txtNome.SelectionStart = 0;
+            txtNome.ShortcutsEnabled = true;
+            txtNome.Size = new Size(553, 48);
+            txtNome.TabIndex = 0;
+            txtNome.TabStop = false;
+            txtNome.TextAlign = HorizontalAlignment.Left;
+            txtNome.TrailingIcon = null;
+            txtNome.UseSystemPasswordChar = false;
+            // 
+            // txtEndereco
+            // 
+            txtEndereco.AnimateReadOnly = false;
+            txtEndereco.AutoCompleteMode = AutoCompleteMode.None;
+            txtEndereco.AutoCompleteSource = AutoCompleteSource.None;
+            txtEndereco.BackgroundImageLayout = ImageLayout.None;
+            txtEndereco.CharacterCasing = CharacterCasing.Normal;
+            txtEndereco.Depth = 0;
+            txtEndereco.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEndereco.HideSelection = true;
+            txtEndereco.Hint = "Endereço";
+            txtEndereco.LeadingIcon = null;
+            txtEndereco.Location = new Point(16, 80);
+            txtEndereco.Margin = new Padding(3, 4, 3, 4);
+            txtEndereco.MaxLength = 32767;
+            txtEndereco.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtEndereco.Name = "txtEndereco";
+            txtEndereco.PasswordChar = '\0';
+            txtEndereco.PrefixSuffixText = null;
+            txtEndereco.ReadOnly = false;
+            txtEndereco.RightToLeft = RightToLeft.No;
+            txtEndereco.SelectedText = "";
+            txtEndereco.SelectionLength = 0;
+            txtEndereco.SelectionStart = 0;
+            txtEndereco.ShortcutsEnabled = true;
+            txtEndereco.Size = new Size(759, 48);
+            txtEndereco.TabIndex = 1;
+            txtEndereco.TabStop = false;
+            txtEndereco.TextAlign = HorizontalAlignment.Left;
+            txtEndereco.TrailingIcon = null;
+            txtEndereco.UseSystemPasswordChar = false;
+            // 
+            // txtId
+            // 
+            txtId.AnimateReadOnly = false;
+            txtId.AutoCompleteMode = AutoCompleteMode.None;
+            txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackgroundImageLayout = ImageLayout.None;
+            txtId.CharacterCasing = CharacterCasing.Normal;
+            txtId.Depth = 0;
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.HideSelection = true;
+            txtId.Hint = "Id";
+            txtId.LeadingIcon = null;
+            txtId.Location = new Point(576, 8);
+            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.MaxLength = 32767;
+            txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PrefixSuffixText = null;
+            txtId.ReadOnly = true;
+            txtId.RightToLeft = RightToLeft.No;
+            txtId.SelectedText = "";
+            txtId.SelectionLength = 0;
+            txtId.SelectionStart = 0;
+            txtId.ShortcutsEnabled = true;
+            txtId.Size = new Size(199, 48);
+            txtId.TabIndex = 2;
+            txtId.TabStop = false;
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.TrailingIcon = null;
+            txtId.UseSystemPasswordChar = false;
+            // 
+            // txtTelefone
+            // 
+            txtTelefone.AnimateReadOnly = false;
+            txtTelefone.AutoCompleteMode = AutoCompleteMode.None;
+            txtTelefone.AutoCompleteSource = AutoCompleteSource.None;
+            txtTelefone.BackgroundImageLayout = ImageLayout.None;
+            txtTelefone.CharacterCasing = CharacterCasing.Normal;
+            txtTelefone.Depth = 0;
+            txtTelefone.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtTelefone.HideSelection = true;
+            txtTelefone.Hint = "Telefone";
+            txtTelefone.LeadingIcon = null;
+            txtTelefone.Location = new Point(16, 152);
+            txtTelefone.Margin = new Padding(3, 4, 3, 4);
+            txtTelefone.MaxLength = 32767;
+            txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtTelefone.Name = "txtTelefone";
+            txtTelefone.PasswordChar = '\0';
+            txtTelefone.PrefixSuffixText = null;
+            txtTelefone.ReadOnly = false;
+            txtTelefone.RightToLeft = RightToLeft.No;
+            txtTelefone.SelectedText = "";
+            txtTelefone.SelectionLength = 0;
+            txtTelefone.SelectionStart = 0;
+            txtTelefone.ShortcutsEnabled = true;
+            txtTelefone.Size = new Size(759, 48);
+            txtTelefone.TabIndex = 3;
+            txtTelefone.TabStop = false;
+            txtTelefone.TextAlign = HorizontalAlignment.Left;
+            txtTelefone.TrailingIcon = null;
+            txtTelefone.UseSystemPasswordChar = false;
+            // 
+            // CadastroFiliais
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(817, 453);
+            Location = new Point(0, 0);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "CadastroFiliais";
+            Padding = new Padding(3, 85, 3, 4);
+            Text = "Cadastro de Filiais";
+            tabControlCadastro.ResumeLayout(false);
+            tabPageCadastro.ResumeLayout(false);
+            tabPageCadastro.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEndereco;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTelefone;
     }
 }

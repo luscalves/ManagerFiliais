@@ -1,8 +1,6 @@
 ﻿using ManagerFiliais.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-
-
 namespace ManagerFiliais.Repository.Context
 {
     public class MySqlContext : DbContext
@@ -35,23 +33,23 @@ namespace ManagerFiliais.Repository.Context
             // Configuração dos relacionamentos
             modelBuilder.Entity<Funcionarios>(entity =>
             {
-                entity.HasOne<Filiais>()
-                    .WithMany()
+                entity.HasOne(f => f.Filial)
+                    .WithMany(f => f.Funcionarios)
                     .HasForeignKey(f => f.IdFilial)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Departamentos>(entity =>
             {
-                entity.HasOne<Filiais>()
-                    .WithMany()
+                entity.HasOne(d => d.Filial)
+                    .WithMany(f => f.Departamentos)
                     .HasForeignKey(d => d.IdFilial)
                     .OnDelete(DeleteBehavior.Cascade);
             });
 
             modelBuilder.Entity<Projetos>(entity =>
             {
-                entity.HasOne<Departamentos>()
+                entity.HasOne(p => p.Departamento)
                     .WithMany()
                     .HasForeignKey(p => p.IdDepartamento)
                     .OnDelete(DeleteBehavior.Cascade);
@@ -59,12 +57,12 @@ namespace ManagerFiliais.Repository.Context
 
             modelBuilder.Entity<FuncionariosProjetos>(entity =>
             {
-                entity.HasOne<Funcionarios>()
+                entity.HasOne(fp => fp.Funcionario)
                     .WithMany()
                     .HasForeignKey(fp => fp.IdFuncionario)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                entity.HasOne<Projetos>()
+                entity.HasOne(fp => fp.Projeto)
                     .WithMany()
                     .HasForeignKey(fp => fp.IdProjeto)
                     .OnDelete(DeleteBehavior.Cascade);

@@ -2,7 +2,6 @@
 
 namespace ManagerFiliais.Domain.Entities
 {
-
     public class Funcionarios : BaseEntity<int>
     {
         public Funcionarios() { }
@@ -18,6 +17,7 @@ namespace ManagerFiliais.Domain.Entities
         public string Nome { get; set; }
         public string Cargo { get; set; }
         public int IdFilial { get; set; }
-    }
 
+        public Filiais Filial { get; set; }
     }
+}

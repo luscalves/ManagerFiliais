@@ -2,7 +2,6 @@
 
 namespace ManagerFiliais.Domain.Entities
 {
-
     public class FuncionariosProjetos : BaseEntity<int>
     {
         public FuncionariosProjetos() { }
@@ -20,5 +19,8 @@ namespace ManagerFiliais.Domain.Entities
         public int IdProjeto { get; set; }
         public string CargoProjeto { get; set; }
         public DateTime DataParticipacao { get; set; }
+
+        public Funcionarios Funcionario { get; set; }
+        public Projetos Projeto { get; set; }
     }
 }

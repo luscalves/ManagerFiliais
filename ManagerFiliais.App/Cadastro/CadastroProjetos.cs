@@ -17,5 +17,6 @@ namespace ManagerFiliais.App.Cadastro
         {
             InitializeComponent();
         }
+
     }
 }

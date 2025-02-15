@@ -2,7 +2,6 @@
 
 namespace ManagerFiliais.Domain.Entities
 {
-    // Entidades do sistema corporativo
     public class Usuarios : BaseEntity<int>
     {
         public Usuarios() { }
@@ -20,9 +19,3 @@ namespace ManagerFiliais.Domain.Entities
         public string Senha { get; set; }
     }
 }
-
-
-   
-
-
-

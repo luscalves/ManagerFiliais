@@ -1,7 +1,7 @@
 ﻿using ManagerFiliais.Domain.Base;
 
-namespace ManagerFiliais.Domain.Entities 
-{ 
+namespace ManagerFiliais.Domain.Entities
+{
     public class Departamentos : BaseEntity<int>
     {
         public Departamentos() { }
@@ -15,5 +15,7 @@ namespace ManagerFiliais.Domain.Entities
 
         public string Nome { get; set; }
         public int IdFilial { get; set; }
+
+        public Filiais Filial { get; set; }
     }
 }

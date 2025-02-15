@@ -1,4 +1,5 @@
 ﻿using ManagerFiliais.App.Base;
+using ManagerFiliais.App.Models;
 using ManagerFiliais.Domain.Base;
 using ManagerFiliais.Domain.Entities;
 using ManagerFiliais.Service.Validators;
@@ -13,22 +14,36 @@ namespace ManagerFiliais.App.Cadastros
     public partial class CadastroDepartamentos : CadastroBase
     {
         private readonly IBaseService<Departamentos> _departamentoService;
-        private List<Departamentos> departamentos;
-        private bool IsAlteracao;
+        private readonly IBaseService<Filiais> _filialService;
 
-        public CadastroDepartamentos(IBaseService<Departamentos> departamentoService)
+        private List<DepartamentosModel>? departamentos;
+
+        public CadastroDepartamentos(IBaseService<Departamentos> departamentoService, IBaseService<Filiais> filialService)
         {
             _departamentoService = departamentoService;
+            _filialService = filialService;
             InitializeComponent();
+            CarregarCombo();
+        }
+
+        private void CarregarCombo()
+        {
+            cboFilial.ValueMember = "Id";
+            cboFilial.DisplayMember = "Nome";
+            cboFilial.DataSource = _filialService.Get<FiliaisModel>().ToList();
         }
 
         private void PreencheObjeto(Departamentos departamento)
         {
             departamento.Nome = txtNome.Text;
-            departamento.IdFilial = int.Parse(txtIdFilial.Text);
+
+            if (int.TryParse(cboFilial.SelectedValue.ToString(), out int idFilial))
+            {
+                departamento.IdFilial = idFilial;
+            }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        protected override void Salvar()
         {
             try
             {
@@ -47,71 +62,52 @@ namespace ManagerFiliais.App.Cadastros
                     PreencheObjeto(departamento);
                     _departamentoService.Add<Departamentos, Departamentos, DepartamentosValidator>(departamento);
                 }
+
                 tabControlCadastro.SelectedIndex = 1;
-                CarregaGrid();
-                LimparCampos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"Manager Filiais",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Manager Filiais", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        protected override void Deletar(int id)
         {
             try
             {
-                if (int.TryParse(txtId.Text, out var id))
-                {
-                    _departamentoService.Delete(id);
-                    MessageBox.Show("Departamento deletado com sucesso!", "Manager Filiais",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CarregaGrid();
-                    LimparCampos();
-                }
+                _departamentoService.Delete(id);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"Manager Filiais",
-                   MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"Manager Filiais", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void CarregaGrid()
+        protected override void CarregaGrid()
         {
-            departamentos = _departamentoService.Get<Departamentos>().ToList();
+            departamentos = _departamentoService.Get<DepartamentosModel>(false, new[] { "Filial" }).ToList();
             dataGridViewConsulta.DataSource = departamentos;
+            dataGridViewConsulta.Columns["Id"]!.Visible = false;
             dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
-        private void CarregaRegistro(DataGridViewRow? linha)
+        protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            txtIdFilial.Text = linha?.Cells["IdFilial"].Value.ToString();
-            IsAlteracao = true;
+            cboFilial.SelectedValue = linha?.Cells["IdFilial"].Value;
         }
 
-        private void LimparCampos()
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            txtId.Text = string.Empty;
-            txtNome.Text = string.Empty;
-            txtIdFilial.Text = string.Empty;
-            IsAlteracao = false;
+            Salvar();
         }
 
-        private void CadastroDepartamentos_Load(object sender, EventArgs e)
+        private void btnDeletar_Click(object sender, EventArgs e)
         {
-            CarregaGrid();
-        }
-
-        private void dataGridViewConsulta_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
+            if (int.TryParse(txtId.Text, out var id))
             {
-                var linha = dataGridViewConsulta.Rows[e.RowIndex];
-                CarregaRegistro(linha);
+                Deletar(id);
             }
         }
     }
