@@ -1,4 +1,7 @@
-﻿namespace ManagerFiliais.App.Cadastro
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Xml.Linq;
+
+namespace ManagerFiliais.App.Cadastros
 {
     partial class CadastroUsuarios
     {
@@ -29,10 +32,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuarios));
-            NomeTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            EmailTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            SenhaTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            IdTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtEmail = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtSenha = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             SuspendLayout();
@@ -45,152 +48,162 @@
             // 
             // tabControlCadastro
             // 
-            tabControlCadastro.Size = new Size(651, 327);
+            tabControlCadastro.Location = new Point(3, 85);
+            tabControlCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabControlCadastro.Size = new Size(720, 443);
             // 
             // tabPageCadastro
             // 
-            tabPageCadastro.Controls.Add(IdTxt);
-            tabPageCadastro.Controls.Add(SenhaTxt);
-            tabPageCadastro.Controls.Add(EmailTxt);
-            tabPageCadastro.Controls.Add(NomeTxt);
-            tabPageCadastro.Size = new Size(643, 292);
-            tabPageCadastro.Controls.SetChildIndex(NomeTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(EmailTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(SenhaTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(IdTxt, 0);
+            tabPageCadastro.Controls.Add(txtSenha);
+            tabPageCadastro.Controls.Add(txtEmail);
+            tabPageCadastro.Controls.Add(txtId);
+            tabPageCadastro.Controls.Add(txtNome);
+            tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Size = new Size(712, 408);
+            tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtEmail, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtSenha, 0);
             // 
-            // NomeTxt
+            // txtNome
             // 
-            NomeTxt.AnimateReadOnly = false;
-            NomeTxt.AutoCompleteMode = AutoCompleteMode.None;
-            NomeTxt.AutoCompleteSource = AutoCompleteSource.None;
-            NomeTxt.BackgroundImageLayout = ImageLayout.None;
-            NomeTxt.CharacterCasing = CharacterCasing.Normal;
-            NomeTxt.Depth = 0;
-            NomeTxt.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            NomeTxt.HideSelection = true;
-            NomeTxt.Hint = "Nome";
-            NomeTxt.LeadingIcon = null;
-            NomeTxt.Location = new Point(130, 19);
-            NomeTxt.MaxLength = 32767;
-            NomeTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            NomeTxt.Name = "NomeTxt";
-            NomeTxt.PasswordChar = '\0';
-            NomeTxt.PrefixSuffixText = null;
-            NomeTxt.ReadOnly = false;
-            NomeTxt.RightToLeft = RightToLeft.No;
-            NomeTxt.SelectedText = "";
-            NomeTxt.SelectionLength = 0;
-            NomeTxt.SelectionStart = 0;
-            NomeTxt.ShortcutsEnabled = true;
-            NomeTxt.Size = new Size(501, 48);
-            NomeTxt.TabIndex = 2;
-            NomeTxt.TabStop = false;
-            NomeTxt.TextAlign = HorizontalAlignment.Left;
-            NomeTxt.TrailingIcon = null;
-            NomeTxt.UseSystemPasswordChar = false;
+            txtNome.AnimateReadOnly = false;
+            txtNome.AutoCompleteMode = AutoCompleteMode.None;
+            txtNome.AutoCompleteSource = AutoCompleteSource.None;
+            txtNome.BackgroundImageLayout = ImageLayout.None;
+            txtNome.CharacterCasing = CharacterCasing.Normal;
+            txtNome.Depth = 0;
+            txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtNome.HideSelection = true;
+            txtNome.Hint = "Nome";
+            txtNome.LeadingIcon = null;
+            txtNome.Location = new Point(16, 8);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
+            txtNome.MaxLength = 32767;
+            txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtNome.Name = "txtNome";
+            txtNome.PasswordChar = '\0';
+            txtNome.PrefixSuffixText = null;
+            txtNome.ReadOnly = false;
+            txtNome.RightToLeft = RightToLeft.No;
+            txtNome.SelectedText = "";
+            txtNome.SelectionLength = 0;
+            txtNome.SelectionStart = 0;
+            txtNome.ShortcutsEnabled = true;
+            txtNome.Size = new Size(553, 48);
+            txtNome.TabIndex = 0;
+            txtNome.TabStop = false;
+            txtNome.TextAlign = HorizontalAlignment.Left;
+            txtNome.TrailingIcon = null;
+            txtNome.UseSystemPasswordChar = false;
             // 
-            // EmailTxt
+            // txtId
             // 
-            EmailTxt.AnimateReadOnly = false;
-            EmailTxt.AutoCompleteMode = AutoCompleteMode.None;
-            EmailTxt.AutoCompleteSource = AutoCompleteSource.None;
-            EmailTxt.BackgroundImageLayout = ImageLayout.None;
-            EmailTxt.CharacterCasing = CharacterCasing.Normal;
-            EmailTxt.Depth = 0;
-            EmailTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            EmailTxt.HideSelection = true;
-            EmailTxt.Hint = "Email";
-            EmailTxt.LeadingIcon = null;
-            EmailTxt.Location = new Point(3, 73);
-            EmailTxt.MaxLength = 32767;
-            EmailTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            EmailTxt.Name = "EmailTxt";
-            EmailTxt.PasswordChar = '\0';
-            EmailTxt.PrefixSuffixText = null;
-            EmailTxt.ReadOnly = false;
-            EmailTxt.RightToLeft = RightToLeft.No;
-            EmailTxt.SelectedText = "";
-            EmailTxt.SelectionLength = 0;
-            EmailTxt.SelectionStart = 0;
-            EmailTxt.ShortcutsEnabled = true;
-            EmailTxt.Size = new Size(628, 48);
-            EmailTxt.TabIndex = 3;
-            EmailTxt.TabStop = false;
-            EmailTxt.TextAlign = HorizontalAlignment.Left;
-            EmailTxt.TrailingIcon = null;
-            EmailTxt.UseSystemPasswordChar = false;
+            txtId.AnimateReadOnly = false;
+            txtId.AutoCompleteMode = AutoCompleteMode.None;
+            txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackgroundImageLayout = ImageLayout.None;
+            txtId.CharacterCasing = CharacterCasing.Normal;
+            txtId.Depth = 0;
+            txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.HideSelection = true;
+            txtId.Hint = "Id";
+            txtId.LeadingIcon = null;
+            txtId.Location = new Point(576, 8);
+            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.MaxLength = 32767;
+            txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PrefixSuffixText = null;
+            txtId.ReadOnly = true;
+            txtId.RightToLeft = RightToLeft.No;
+            txtId.SelectedText = "";
+            txtId.SelectionLength = 0;
+            txtId.SelectionStart = 0;
+            txtId.ShortcutsEnabled = true;
+            txtId.Size = new Size(102, 48);
+            txtId.TabIndex = 1;
+            txtId.TabStop = false;
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.TrailingIcon = null;
+            txtId.UseSystemPasswordChar = false;
             // 
-            // SenhaTxt
+            // txtEmail
             // 
-            SenhaTxt.AnimateReadOnly = false;
-            SenhaTxt.AutoCompleteMode = AutoCompleteMode.None;
-            SenhaTxt.AutoCompleteSource = AutoCompleteSource.None;
-            SenhaTxt.BackgroundImageLayout = ImageLayout.None;
-            SenhaTxt.CharacterCasing = CharacterCasing.Normal;
-            SenhaTxt.Depth = 0;
-            SenhaTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            SenhaTxt.HideSelection = true;
-            SenhaTxt.Hint = "Senha";
-            SenhaTxt.LeadingIcon = null;
-            SenhaTxt.Location = new Point(0, 127);
-            SenhaTxt.MaxLength = 32767;
-            SenhaTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            SenhaTxt.Name = "SenhaTxt";
-            SenhaTxt.PasswordChar = '●';
-            SenhaTxt.PrefixSuffixText = null;
-            SenhaTxt.ReadOnly = false;
-            SenhaTxt.RightToLeft = RightToLeft.No;
-            SenhaTxt.SelectedText = "";
-            SenhaTxt.SelectionLength = 0;
-            SenhaTxt.SelectionStart = 0;
-            SenhaTxt.ShortcutsEnabled = true;
-            SenhaTxt.Size = new Size(631, 48);
-            SenhaTxt.TabIndex = 4;
-            SenhaTxt.TabStop = false;
-            SenhaTxt.TextAlign = HorizontalAlignment.Left;
-            SenhaTxt.TrailingIcon = null;
-            SenhaTxt.UseSystemPasswordChar = true;
+            txtEmail.AnimateReadOnly = false;
+            txtEmail.AutoCompleteMode = AutoCompleteMode.None;
+            txtEmail.AutoCompleteSource = AutoCompleteSource.None;
+            txtEmail.BackgroundImageLayout = ImageLayout.None;
+            txtEmail.CharacterCasing = CharacterCasing.Normal;
+            txtEmail.Depth = 0;
+            txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEmail.HideSelection = true;
+            txtEmail.Hint = "Email";
+            txtEmail.LeadingIcon = null;
+            txtEmail.Location = new Point(16, 80);
+            txtEmail.Margin = new Padding(3, 4, 3, 4);
+            txtEmail.MaxLength = 32767;
+            txtEmail.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtEmail.Name = "txtEmail";
+            txtEmail.PasswordChar = '\0';
+            txtEmail.PrefixSuffixText = null;
+            txtEmail.ReadOnly = false;
+            txtEmail.RightToLeft = RightToLeft.No;
+            txtEmail.SelectedText = "";
+            txtEmail.SelectionLength = 0;
+            txtEmail.SelectionStart = 0;
+            txtEmail.ShortcutsEnabled = true;
+            txtEmail.Size = new Size(662, 48);
+            txtEmail.TabIndex = 2;
+            txtEmail.TabStop = false;
+            txtEmail.TextAlign = HorizontalAlignment.Left;
+            txtEmail.TrailingIcon = null;
+            txtEmail.UseSystemPasswordChar = false;
             // 
-            // IdTxt
+            // txtSenha
             // 
-            IdTxt.AnimateReadOnly = false;
-            IdTxt.AutoCompleteMode = AutoCompleteMode.None;
-            IdTxt.AutoCompleteSource = AutoCompleteSource.None;
-            IdTxt.BackgroundImageLayout = ImageLayout.None;
-            IdTxt.CharacterCasing = CharacterCasing.Normal;
-            IdTxt.Depth = 0;
-            IdTxt.Font = new Font("Roboto", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            IdTxt.HideSelection = true;
-            IdTxt.Hint = "Id";
-            IdTxt.LeadingIcon = null;
-            IdTxt.Location = new Point(6, 19);
-            IdTxt.MaxLength = 32767;
-            IdTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            IdTxt.Name = "IdTxt";
-            IdTxt.PasswordChar = '\0';
-            IdTxt.PrefixSuffixText = null;
-            IdTxt.ReadOnly = false;
-            IdTxt.RightToLeft = RightToLeft.No;
-            IdTxt.SelectedText = "";
-            IdTxt.SelectionLength = 0;
-            IdTxt.SelectionStart = 0;
-            IdTxt.ShortcutsEnabled = true;
-            IdTxt.Size = new Size(113, 48);
-            IdTxt.TabIndex = 5;
-            IdTxt.TabStop = false;
-            IdTxt.TextAlign = HorizontalAlignment.Left;
-            IdTxt.TrailingIcon = null;
-            IdTxt.UseSystemPasswordChar = false;
+            txtSenha.AnimateReadOnly = false;
+            txtSenha.AutoCompleteMode = AutoCompleteMode.None;
+            txtSenha.AutoCompleteSource = AutoCompleteSource.None;
+            txtSenha.BackgroundImageLayout = ImageLayout.None;
+            txtSenha.CharacterCasing = CharacterCasing.Normal;
+            txtSenha.Depth = 0;
+            txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtSenha.HideSelection = true;
+            txtSenha.Hint = "Senha";
+            txtSenha.LeadingIcon = null;
+            txtSenha.Location = new Point(16, 159);
+            txtSenha.Margin = new Padding(3, 4, 3, 4);
+            txtSenha.MaxLength = 32767;
+            txtSenha.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '●';
+            txtSenha.PrefixSuffixText = null;
+            txtSenha.ReadOnly = false;
+            txtSenha.RightToLeft = RightToLeft.No;
+            txtSenha.SelectedText = "";
+            txtSenha.SelectionLength = 0;
+            txtSenha.SelectionStart = 0;
+            txtSenha.ShortcutsEnabled = true;
+            txtSenha.Size = new Size(662, 48);
+            txtSenha.TabIndex = 3;
+            txtSenha.TabStop = false;
+            txtSenha.TextAlign = HorizontalAlignment.Left;
+            txtSenha.TrailingIcon = null;
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // CadastroUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(657, 394);
+            ClientSize = new Size(726, 532);
             Location = new Point(0, 0);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroUsuarios";
-            Text = "CadastroUsuarios";
+            Padding = new Padding(3, 85, 3, 4);
+            Text = "Cadastro de Usuários";
             tabControlCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();
@@ -199,9 +212,9 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit SenhaTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit EmailTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit NomeTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit IdTxt;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEmail;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtSenha;
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace ManagerFiliais.App.Cadastro
+﻿namespace ManagerFiliais.App.Cadastros
 {
     partial class CadastroFuncionariosProjetos
     {
@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroFuncionariosProjetos));
-            IdFuncioanarioTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            CargoTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            IdProjetoTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            DataTxt = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtCargoProjeto = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            cboFuncionario = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboProjeto = new ReaLTaiizor.Controls.MaterialComboBox();
+            dtpDataParticipacao = new DateTimePicker();
             tabControlCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             SuspendLayout();
@@ -45,152 +46,156 @@
             // 
             // tabControlCadastro
             // 
-            tabControlCadastro.Size = new Size(450, 372);
+            tabControlCadastro.Location = new Point(3, 85);
+            tabControlCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabControlCadastro.Size = new Size(838, 379);
             // 
             // tabPageCadastro
             // 
-            tabPageCadastro.Controls.Add(DataTxt);
-            tabPageCadastro.Controls.Add(IdProjetoTxt);
-            tabPageCadastro.Controls.Add(CargoTxt);
-            tabPageCadastro.Controls.Add(IdFuncioanarioTxt);
-            tabPageCadastro.Size = new Size(442, 337);
-            tabPageCadastro.Controls.SetChildIndex(IdFuncioanarioTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(CargoTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(IdProjetoTxt, 0);
-            tabPageCadastro.Controls.SetChildIndex(DataTxt, 0);
+            tabPageCadastro.Controls.Add(dtpDataParticipacao);
+            tabPageCadastro.Controls.Add(cboProjeto);
+            tabPageCadastro.Controls.Add(cboFuncionario);
+            tabPageCadastro.Controls.Add(txtId);
+            tabPageCadastro.Controls.Add(txtCargoProjeto);
+            tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Size = new Size(830, 344);
+            tabPageCadastro.Controls.SetChildIndex(txtCargoProjeto, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboFuncionario, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboProjeto, 0);
+            tabPageCadastro.Controls.SetChildIndex(dtpDataParticipacao, 0);
             // 
-            // IdFuncioanarioTxt
+            // txtCargoProjeto
             // 
-            IdFuncioanarioTxt.AnimateReadOnly = false;
-            IdFuncioanarioTxt.AutoCompleteMode = AutoCompleteMode.None;
-            IdFuncioanarioTxt.AutoCompleteSource = AutoCompleteSource.None;
-            IdFuncioanarioTxt.BackgroundImageLayout = ImageLayout.None;
-            IdFuncioanarioTxt.CharacterCasing = CharacterCasing.Normal;
-            IdFuncioanarioTxt.Depth = 0;
-            IdFuncioanarioTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            IdFuncioanarioTxt.HideSelection = true;
-            IdFuncioanarioTxt.Hint = "Id do Funcionario";
-            IdFuncioanarioTxt.LeadingIcon = null;
-            IdFuncioanarioTxt.Location = new Point(23, 32);
-            IdFuncioanarioTxt.MaxLength = 32767;
-            IdFuncioanarioTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            IdFuncioanarioTxt.Name = "IdFuncioanarioTxt";
-            IdFuncioanarioTxt.PasswordChar = '\0';
-            IdFuncioanarioTxt.PrefixSuffixText = null;
-            IdFuncioanarioTxt.ReadOnly = false;
-            IdFuncioanarioTxt.RightToLeft = RightToLeft.No;
-            IdFuncioanarioTxt.SelectedText = "";
-            IdFuncioanarioTxt.SelectionLength = 0;
-            IdFuncioanarioTxt.SelectionStart = 0;
-            IdFuncioanarioTxt.ShortcutsEnabled = true;
-            IdFuncioanarioTxt.Size = new Size(406, 48);
-            IdFuncioanarioTxt.TabIndex = 2;
-            IdFuncioanarioTxt.TabStop = false;
-            IdFuncioanarioTxt.TextAlign = HorizontalAlignment.Left;
-            IdFuncioanarioTxt.TrailingIcon = null;
-            IdFuncioanarioTxt.UseSystemPasswordChar = false;
+            txtCargoProjeto.AnimateReadOnly = false;
+            txtCargoProjeto.AutoCompleteMode = AutoCompleteMode.None;
+            txtCargoProjeto.AutoCompleteSource = AutoCompleteSource.None;
+            txtCargoProjeto.BackgroundImageLayout = ImageLayout.None;
+            txtCargoProjeto.CharacterCasing = CharacterCasing.Normal;
+            txtCargoProjeto.Depth = 0;
+            txtCargoProjeto.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtCargoProjeto.HideSelection = true;
+            txtCargoProjeto.Hint = "Cargo no Projeto";
+            txtCargoProjeto.LeadingIcon = null;
+            txtCargoProjeto.Location = new Point(16, 8);
+            txtCargoProjeto.Margin = new Padding(3, 4, 3, 4);
+            txtCargoProjeto.MaxLength = 32767;
+            txtCargoProjeto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtCargoProjeto.Name = "txtCargoProjeto";
+            txtCargoProjeto.PasswordChar = '\0';
+            txtCargoProjeto.PrefixSuffixText = null;
+            txtCargoProjeto.ReadOnly = false;
+            txtCargoProjeto.RightToLeft = RightToLeft.No;
+            txtCargoProjeto.SelectedText = "";
+            txtCargoProjeto.SelectionLength = 0;
+            txtCargoProjeto.SelectionStart = 0;
+            txtCargoProjeto.ShortcutsEnabled = true;
+            txtCargoProjeto.Size = new Size(641, 48);
+            txtCargoProjeto.TabIndex = 0;
+            txtCargoProjeto.TabStop = false;
+            txtCargoProjeto.TextAlign = HorizontalAlignment.Left;
+            txtCargoProjeto.TrailingIcon = null;
+            txtCargoProjeto.UseSystemPasswordChar = false;
             // 
-            // CargoTxt
+            // txtId
             // 
-            CargoTxt.AnimateReadOnly = false;
-            CargoTxt.AutoCompleteMode = AutoCompleteMode.None;
-            CargoTxt.AutoCompleteSource = AutoCompleteSource.None;
-            CargoTxt.BackgroundImageLayout = ImageLayout.None;
-            CargoTxt.CharacterCasing = CharacterCasing.Normal;
-            CargoTxt.Depth = 0;
-            CargoTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            CargoTxt.HideSelection = true;
-            CargoTxt.Hint = "Cargo no Projeto";
-            CargoTxt.LeadingIcon = null;
-            CargoTxt.Location = new Point(23, 140);
-            CargoTxt.MaxLength = 32767;
-            CargoTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            CargoTxt.Name = "CargoTxt";
-            CargoTxt.PasswordChar = '\0';
-            CargoTxt.PrefixSuffixText = null;
-            CargoTxt.ReadOnly = false;
-            CargoTxt.RightToLeft = RightToLeft.No;
-            CargoTxt.SelectedText = "";
-            CargoTxt.SelectionLength = 0;
-            CargoTxt.SelectionStart = 0;
-            CargoTxt.ShortcutsEnabled = true;
-            CargoTxt.Size = new Size(406, 48);
-            CargoTxt.TabIndex = 3;
-            CargoTxt.TabStop = false;
-            CargoTxt.TextAlign = HorizontalAlignment.Left;
-            CargoTxt.TrailingIcon = null;
-            CargoTxt.UseSystemPasswordChar = false;
+            txtId.AnimateReadOnly = false;
+            txtId.AutoCompleteMode = AutoCompleteMode.None;
+            txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackgroundImageLayout = ImageLayout.None;
+            txtId.CharacterCasing = CharacterCasing.Normal;
+            txtId.Depth = 0;
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.HideSelection = true;
+            txtId.Hint = "Id";
+            txtId.LeadingIcon = null;
+            txtId.Location = new Point(677, 8);
+            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.MaxLength = 32767;
+            txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PrefixSuffixText = null;
+            txtId.ReadOnly = true;
+            txtId.RightToLeft = RightToLeft.No;
+            txtId.SelectedText = "";
+            txtId.SelectionLength = 0;
+            txtId.SelectionStart = 0;
+            txtId.ShortcutsEnabled = true;
+            txtId.Size = new Size(124, 48);
+            txtId.TabIndex = 1;
+            txtId.TabStop = false;
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.TrailingIcon = null;
+            txtId.UseSystemPasswordChar = false;
             // 
-            // IdProjetoTxt
+            // cboFuncionario
             // 
-            IdProjetoTxt.AnimateReadOnly = false;
-            IdProjetoTxt.AutoCompleteMode = AutoCompleteMode.None;
-            IdProjetoTxt.AutoCompleteSource = AutoCompleteSource.None;
-            IdProjetoTxt.BackgroundImageLayout = ImageLayout.None;
-            IdProjetoTxt.CharacterCasing = CharacterCasing.Normal;
-            IdProjetoTxt.Depth = 0;
-            IdProjetoTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            IdProjetoTxt.HideSelection = true;
-            IdProjetoTxt.Hint = "Id do Projeto";
-            IdProjetoTxt.LeadingIcon = null;
-            IdProjetoTxt.Location = new Point(23, 86);
-            IdProjetoTxt.MaxLength = 32767;
-            IdProjetoTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            IdProjetoTxt.Name = "IdProjetoTxt";
-            IdProjetoTxt.PasswordChar = '\0';
-            IdProjetoTxt.PrefixSuffixText = null;
-            IdProjetoTxt.ReadOnly = false;
-            IdProjetoTxt.RightToLeft = RightToLeft.No;
-            IdProjetoTxt.SelectedText = "";
-            IdProjetoTxt.SelectionLength = 0;
-            IdProjetoTxt.SelectionStart = 0;
-            IdProjetoTxt.ShortcutsEnabled = true;
-            IdProjetoTxt.Size = new Size(406, 48);
-            IdProjetoTxt.TabIndex = 4;
-            IdProjetoTxt.TabStop = false;
-            IdProjetoTxt.TextAlign = HorizontalAlignment.Left;
-            IdProjetoTxt.TrailingIcon = null;
-            IdProjetoTxt.UseSystemPasswordChar = false;
+            cboFuncionario.AutoResize = false;
+            cboFuncionario.BackColor = Color.FromArgb(255, 255, 255);
+            cboFuncionario.Depth = 0;
+            cboFuncionario.DrawMode = DrawMode.OwnerDrawVariable;
+            cboFuncionario.DropDownHeight = 174;
+            cboFuncionario.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboFuncionario.DropDownWidth = 121;
+            cboFuncionario.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboFuncionario.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboFuncionario.FormattingEnabled = true;
+            cboFuncionario.Hint = "Funcionário";
+            cboFuncionario.IntegralHeight = false;
+            cboFuncionario.ItemHeight = 43;
+            cboFuncionario.Location = new Point(16, 80);
+            cboFuncionario.Margin = new Padding(3, 4, 3, 4);
+            cboFuncionario.MaxDropDownItems = 4;
+            cboFuncionario.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboFuncionario.Name = "cboFuncionario";
+            cboFuncionario.Size = new Size(785, 49);
+            cboFuncionario.StartIndex = 0;
+            cboFuncionario.TabIndex = 2;
             // 
-            // DataTxt
+            // cboProjeto
             // 
-            DataTxt.AnimateReadOnly = false;
-            DataTxt.AutoCompleteMode = AutoCompleteMode.None;
-            DataTxt.AutoCompleteSource = AutoCompleteSource.None;
-            DataTxt.BackgroundImageLayout = ImageLayout.None;
-            DataTxt.CharacterCasing = CharacterCasing.Normal;
-            DataTxt.Depth = 0;
-            DataTxt.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            DataTxt.HideSelection = true;
-            DataTxt.Hint = "Data de Inicio";
-            DataTxt.LeadingIcon = null;
-            DataTxt.Location = new Point(23, 194);
-            DataTxt.MaxLength = 32767;
-            DataTxt.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            DataTxt.Name = "DataTxt";
-            DataTxt.PasswordChar = '\0';
-            DataTxt.PrefixSuffixText = null;
-            DataTxt.ReadOnly = false;
-            DataTxt.RightToLeft = RightToLeft.No;
-            DataTxt.SelectedText = "";
-            DataTxt.SelectionLength = 0;
-            DataTxt.SelectionStart = 0;
-            DataTxt.ShortcutsEnabled = true;
-            DataTxt.Size = new Size(412, 48);
-            DataTxt.TabIndex = 1;
-            DataTxt.TabStop = false;
-            DataTxt.TextAlign = HorizontalAlignment.Left;
-            DataTxt.TrailingIcon = null;
-            DataTxt.UseSystemPasswordChar = false;
+            cboProjeto.AutoResize = false;
+            cboProjeto.BackColor = Color.FromArgb(255, 255, 255);
+            cboProjeto.Depth = 0;
+            cboProjeto.DrawMode = DrawMode.OwnerDrawVariable;
+            cboProjeto.DropDownHeight = 174;
+            cboProjeto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboProjeto.DropDownWidth = 121;
+            cboProjeto.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboProjeto.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboProjeto.FormattingEnabled = true;
+            cboProjeto.Hint = "Projeto";
+            cboProjeto.IntegralHeight = false;
+            cboProjeto.ItemHeight = 43;
+            cboProjeto.Location = new Point(16, 153);
+            cboProjeto.Margin = new Padding(3, 4, 3, 4);
+            cboProjeto.MaxDropDownItems = 4;
+            cboProjeto.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboProjeto.Name = "cboProjeto";
+            cboProjeto.Size = new Size(785, 49);
+            cboProjeto.StartIndex = 0;
+            cboProjeto.TabIndex = 3;
+            // 
+            // dtpDataParticipacao
+            // 
+            dtpDataParticipacao.Location = new Point(33, 256);
+            dtpDataParticipacao.Margin = new Padding(3, 4, 3, 4);
+            dtpDataParticipacao.Name = "dtpDataParticipacao";
+            dtpDataParticipacao.Size = new Size(228, 27);
+            dtpDataParticipacao.TabIndex = 4;
             // 
             // CadastroFuncionariosProjetos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(456, 439);
+            ClientSize = new Size(844, 468);
             Location = new Point(0, 0);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroFuncionariosProjetos";
-            Text = "CadastroFuncionariosProjetos";
+            Padding = new Padding(3, 85, 3, 4);
+            Text = "Cadastro de Funcionários em Projetos";
             tabControlCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             tabPageCadastro.PerformLayout();
@@ -199,9 +204,10 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit IdFuncioanarioTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit IdProjetoTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit CargoTxt;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit DataTxt;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCargoProjeto;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
+        private ReaLTaiizor.Controls.MaterialComboBox cboFuncionario;
+        private ReaLTaiizor.Controls.MaterialComboBox cboProjeto;
+        private DateTimePicker dtpDataParticipacao;
     }
 }

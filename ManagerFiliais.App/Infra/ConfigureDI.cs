@@ -8,8 +8,8 @@ using ManagerFiliais.App.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using ManagerFiliais.App.Outros;
-using ManagerFiliais.App.Cadastro;
 using ManagerFiliais.App.Cadastros;
+
 
 namespace ManagerFiliais.App.Infra
 {

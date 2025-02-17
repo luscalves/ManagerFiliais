@@ -4,7 +4,7 @@ using ManagerFiliais.App.Outros;
 using ManagerFiliais.Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using ReaLTaiizor.Forms;
-using ManagerFiliais.App.Cadastro;
+using ManagerFiliais.App.Cadastros;
 using ManagerFiliais.App.Cadastros;
 
 namespace ManagerFiliais.App
